@@ -1,11 +1,6 @@
 import sys
 import pandas as pd
 
-if __name__ == "__main__":
-    if len(sys.argv) != 5:
-        print("Usage: python3 wa_mpxv/wa-nextstrain-update-location-genbank.py data/metadata.tsv data/doh_metadata_running_linkedWDRS.csv data/mpox_seq_results_june2024.csv data/metadata.tsv")
-        sys.exit(1)
-
 input_file_1 = sys.argv[1]
 input_file_2 = sys.argv[2]
 input_file_3 = sys.argv[3]
@@ -68,6 +63,11 @@ new_df[['age', 'sex', 'county', 'travel']] = new_wa_df[['age', 'sex', 'county', 
 
 # write out to tsv
 new_df.to_csv(output_file, sep='\t')
+
+if __name__ == "__main__":
+    if len(sys.argv) != 5:
+        print("Usage: python3 wa_mpxv/wa-nextstrain-update-location-genbank.py data/metadata.tsv data/doh_metadata_running_linkedWDRS.csv data/mpox_seq_results_june2024.csv data/metadata.tsv")
+        sys.exit(1)
 
 
 print('Success! Exit Code 0')
