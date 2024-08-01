@@ -23,7 +23,7 @@ rule add_wa_metadata:
         metadata="data/metadata.tsv"
     shell:
         """
-        python3 wa_mpxv/wa-mpxv-metadata-update-3.py {input.metadata} {input.wa_old_dates} {input.wa_new_dates} {output.metadata}
+        python3 wa_mpxv/wa-mpxv-metadata-update.py {input.metadata} {input.wa_old_dates} {input.wa_new_dates} {output.metadata}
         """
 
 ruleorder: add_wa_metadata > fix_metadata_file_name > decompress
