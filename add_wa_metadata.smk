@@ -8,7 +8,7 @@ rule fix_metadata_file_name:
         metadata="data/starting_metadata.tsv"
     shell:
         """
-        cp data/metadata.tsv data/starting_metadata.tsv
+        cp {input.metdata} {output.metdata}
         """
 
 rule add_wa_metadata:
