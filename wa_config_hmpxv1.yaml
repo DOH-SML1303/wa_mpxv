@@ -23,18 +23,25 @@ filter:
   min_date: 2017
   min_length: 100000
 
+
 subsample:
   wa:
-    group_by: "--group-by country year"
-    sequences_per_group: "--sequences-per-group 100"
-    other_filters: "--include-where 'division=Washington' --exclude-where clade!=IIb"
+    group_by: "--group-by division year"
+    sequences_per_group: "--sequences-per-group 500"
+    other_filters: "--exclude-where division!=Washington"
+    force: true
+  global:
+    group_by: "--group-by lineage"
+    sequences_per_group: "--subsample-max-sequences 500"
+    other_filters: "--exclude-where division=Washington outbreak!=hMPXV-1 clade!=IIb"
+
 
 ## align
 max_indel: 10000
 seed_spacing: 1000
 
 ## treefix
-fix_tree: False
+fix_tree: true
 treefix_root: "--root MK783032"
 
 ## refine
