@@ -1,5 +1,7 @@
-custom_rules:
-  - wa_mpxv/add_wa_metadata.smk
+# to add WA metadata into the build without overlay, you can create a custom
+# snakemake rule like so below on lines 3 and 4
+#custom_rules:
+ # - wa_mpxv/add_wa_metadata.smk
 
 
 reference: "defaults/reference.fasta"
@@ -17,8 +19,8 @@ strain_id_field: "accession"
 display_strain_field: "strain"
 
 
-build_name: "wa_hmpxv1"
-auspice_name: "wa_mpox_2024"
+build_name: "hmpxv1_wa"
+auspice_name: "mpox_wa"
 
 filter:
   min_date: 2017
